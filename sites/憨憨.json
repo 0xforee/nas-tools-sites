@@ -177,6 +177,9 @@
         ],
         "PEER_COUNT": [
             "//div[@id='seeder-count']"
+        ],
+        "FREE_DDL": [
+            "//*[@id=\"mainContent\"]/div/div/div[1]/div[2]/div[1]/span/span"
         ]
     }
 }

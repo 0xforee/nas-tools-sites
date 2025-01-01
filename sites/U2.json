@@ -280,6 +280,9 @@
             "//td[@class='rowfollow']/img[@class='pro_free2up'][@alt='2X Free']"
         ],
         "HR": [],
-        "PEER_COUNT": []
+        "PEER_COUNT": [],
+        "FREE_DDL": [
+            "//*[@id=\"outer\"]/table//b/time"
+        ]
     }
 }
