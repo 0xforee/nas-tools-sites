@@ -1,5 +1,5 @@
 {
-    "version": "202412221315",
+    "version": "202602081319",
     "indexer": [
         {
             "id": "zhuzhu",
@@ -7687,7 +7687,7 @@
             "encoding": "UTF-8",
             "public": false,
             "proxy": false,
-            "domain": "https://hhanclub.top/",
+            "domain": "https://hhanclub.net/",
             "search": {
                 "paths": [
                     {
@@ -20326,7 +20326,7 @@
                 "//div[@id='peercount']/b[1]"
             ]
         },
-        "hhanclub.top": {
+        "hhanclub.net": {
             "FREE": [
                 "//span[@class='promotion-tag promotion-tag-free']"
             ],
@@ -20338,6 +20338,9 @@
             ],
             "PEER_COUNT": [
                 "//div[@id='seeder-count']"
+            ],
+            "FREE_DDL": [
+                "//*[@id=\"mainContent\"]/div/div/div[1]/div[2]/div[1]/span/span"
             ]
         },
         "hdatmos.club": {
@@ -20574,7 +20577,10 @@
                 "//td[@class='rowfollow']/img[@class='pro_free2up'][@alt='2X Free']"
             ],
             "HR": [],
-            "PEER_COUNT": []
+            "PEER_COUNT": [],
+            "FREE_DDL": [
+                "//*[@id=\"outer\"]/table//b/time"
+            ]
         },
         "www.skyey2.com": {
             "FREE": [
