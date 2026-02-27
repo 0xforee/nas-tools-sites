@@ -1,0 +1,364 @@
+{
+    "id": "AGSVPT_CN",
+    "name": "\u672b\u65e5",
+    "domain": "https://pt.agsvpt.cn/",
+    "encoding": "UTF-8",
+    "public": false,
+    "search": {
+        "paths": [
+            {
+                "path": "torrents.php",
+                "method": "get"
+            }
+        ],
+        "params": {
+            "search": "{keyword}"
+        },
+        "batch": {
+            "delimiter": " ",
+            "space_replace": "_"
+        }
+    },
+    "batch": {
+        "delimiter": " ",
+        "space_replace": "_"
+    },
+    "category": {
+        "movie": [
+            {
+                "id": 401,
+                "cat": "Movies",
+                "desc": "\u7535\u5f71"
+            }
+        ],
+        "tv": [
+            {
+                "id": 402,
+                "cat": "TV/Series",
+                "desc": "\u7535\u89c6\u5267"
+            },
+            {
+                "id": 403,
+                "cat": "TV/Shows",
+                "desc": "\u7efc\u827a"
+            },
+            {
+                "id": 404,
+                "cat": "TV/Documentaries",
+                "desc": "\u7eaa\u5f55\u7247"
+            },
+            {
+                "id": 405,
+                "cat": "TV/Animations",
+                "desc": "\u52a8\u6f2b"
+            },
+            {
+                "id": 419,
+                "cat": "TV/Shorts",
+                "desc": "\u77ed\u5267"
+            }
+        ]
+    },
+    "torrents": {
+        "list": {
+            "selector": "table.torrents > tr:has(\"table.torrentname\")"
+        },
+        "fields": {
+            "id": {
+                "selector": "a[href*=\"details.php?id=\"]",
+                "attribute": "href",
+                "filters": [
+                    {
+                        "name": "re_search",
+                        "args": [
+                            "\\d+",
+                            0
+                        ]
+                    }
+                ]
+            },
+            "title_default": {
+                "selector": "a[href*=\"details.php?id=\"]"
+            },
+            "title_optional": {
+                "optional": true,
+                "selector": "a[title][href*=\"details.php?id=\"]",
+                "attribute": "title"
+            },
+            "title": {
+                "text": "{% if fields['title_optional'] %}{{ fields['title_optional'] }}{% else %}{{ fields['title_default'] }}{% endif %}"
+            },
+            "category": {
+                "selector": "a[href*=\"?cat=\"]",
+                "attribute": "href",
+                "filters": [
+                    {
+                        "name": "replace",
+                        "args": [
+                            "?",
+                            ""
+                        ]
+                    },
+                    {
+                        "name": "querystring",
+                        "args": "cat"
+                    }
+                ]
+            },
+            "details": {
+                "selector": "a[href*=\"details.php?id=\"]",
+                "attribute": "href"
+            },
+            "download": {
+                "selector": "a[href*=\"download.php?id=\"]",
+                "attribute": "href"
+            },
+            "imdbid": {
+                "selector": "div.imdb_100 > a",
+                "attribute": "href",
+                "filters": [
+                    {
+                        "name": "re_search",
+                        "args": [
+                            "tt\\d+",
+                            0
+                        ]
+                    }
+                ]
+            },
+            "date_elapsed": {
+                "selector": "td:nth-child(4) > span",
+                "optional": true
+            },
+            "date_added": {
+                "selector": "td:nth-child(4) > span",
+                "attribute": "title",
+                "optional": true
+            },
+            "date": {
+                "text": "{% if fields['date_elapsed'] or fields['date_added'] %}{{ fields['date_elapsed'] if fields['date_elapsed'] else fields['date_added'] }}{% else %}now{% endif %}",
+                "filters": [
+                    {
+                        "name": "dateparse",
+                        "args": "%Y-%m-%d %H:%M:%S"
+                    }
+                ]
+            },
+            "size": {
+                "selector": "td:nth-child(5)"
+            },
+            "seeders": {
+                "selector": "td:nth-child(6)"
+            },
+            "leechers": {
+                "selector": "td:nth-child(7)"
+            },
+            "grabs": {
+                "selector": "td:nth-child(8)"
+            },
+            "downloadvolumefactor": {
+                "case": {
+                    "img.pro_free": 0,
+                    "img.pro_free2up": 0,
+                    "img.pro_50pctdown": 0.5,
+                    "img.pro_50pctdown2up": 0.5,
+                    "img.pro_30pctdown": 0.3,
+                    "*": 1
+                }
+            },
+            "uploadvolumefactor": {
+                "case": {
+                    "img.pro_50pctdown2up": 2,
+                    "img.pro_free2up": 2,
+                    "img.pro_2up": 2,
+                    "*": 1
+                }
+            },
+            "description": {
+                "selector": "table.torrentname > tr > td:nth-child(2)",
+                "remove": "a,b,img,span",
+                "contents": -1
+            },
+            "labels": {
+                "selector": "table.torrentname > tr > td:nth-child(2) > span"
+            },
+            "minimumratio": {
+                "text": 1
+            },
+            "minimumseedtime": {
+                "text": 90000
+            }
+        }
+    },
+    "conf": {
+        "FREE": [
+            "//h1[@id='top']/b/font[@class='free']"
+        ],
+        "2XFREE": [
+            "//h1[@id='top']/b/font[@class='twoupfree']"
+        ],
+        "HR": [],
+        "PEER_COUNT": [
+            "//div[@id='peercount']/b[1]"
+        ]
+    },
+    "user_ranking_info": {
+        "enabled": true,
+        "keep_account_level": "Veteran User",
+        "rule_url": "https://wwktopvbpvx.feishu.cn/wiki/EnT0wO37niYXAnk048wceLNmnBd",
+        "field_mapping": {
+            "user_level": "user_level",
+            "upload": "upload",
+            "download": "download",
+            "ratio": "ratio",
+            "bonus": "bonus",
+            "join_at": "join_at"
+        },
+        "ranking_system": {
+            "levels": [
+                {
+                    "name": "Peasant",
+                    "order": 0,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u88ab\u964d\u7ea7\u7528\u6237\uff0c30\u5929\u5185\u9700\u63d0\u5347\u5206\u4eab\u7387\u5426\u5219\u4f1a\u88ab\u8e22\uff1b\u4e0d\u80fd\u53d1\u8868\u8da3\u5473\u76d2\u3001\u7533\u8bf7\u53cb\u60c5\u94fe\u63a5\u3001\u4e0a\u4f20\u5b57\u5e55\u3002\u81ea\u52a8\u964d\u7ea7\u89e6\u53d1\uff1a\u4e0b\u8f7d>50GB\u4e14\u5206\u4eab\u7387<0.4\uff1b\u4e0b\u8f7d>100GB\u4e14\u5206\u4eab\u7387<0.5\uff1b\u4e0b\u8f7d>200GB\u4e14\u5206\u4eab\u7387<0.6\uff1b\u4e0b\u8f7d>400GB\u4e14\u5206\u4eab\u7387<0.7\uff1b\u4e0b\u8f7d>800GB\u4e14\u5206\u4eab\u7387<0.8"
+                },
+                {
+                    "name": "User",
+                    "order": 1,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u9ed8\u8ba4\u7b49\u7ea7\uff08\u522b\u540d\uff1a\u5c0f\u718a\uff09\uff1b\u4ec5\u53ef\u5728\u6bcf\u5468\u516d12:00\u81f3\u5468\u65e523:59\u53d1\u5e03\u79cd\u5b50"
+                },
+                {
+                    "name": "Power User",
+                    "order": 2,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 50,
+                        "bonus": 40000,
+                        "ratio": 1.05
+                    },
+                    "description": "\u522b\u540d\uff1a\u5317\u51b0\u73cd\u73e0\u718a\uff1b\u505a\u79cd\u79ef\u5206>40000\u3001\u4e0b\u8f7d>50GB\u3001\u5206\u4eab\u7387>1.05\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<0.95\u964d\u7ea7\u3002\u53ef\u76f4\u63a5\u53d1\u5e03\u3001\u770bNFO/\u7528\u6237\u5217\u8868\u3001\u8bf7\u6c42\u7eed\u79cd\u3001\u53d1\u9001\u9080\u8bf7\u3001\u770b\u6392\u884c\u699c\u3001\u770b\u4ed6\u4eba\u79cd\u5b50\u5386\u53f2\u3001\u5220\u81ea\u5df1\u5b57\u5e55\uff1b\u53ef\u4f7f\u7528\u94f6\u884c\u8d37\u6b3e"
+                },
+                {
+                    "name": "Elite User",
+                    "order": 3,
+                    "requirements": {
+                        "weeks": 8,
+                        "download_gb": 120,
+                        "bonus": 80000,
+                        "ratio": 1.55
+                    },
+                    "description": "\u522b\u540d\uff1a\u6df1\u6e0a\u851a\u84dd\u718a\uff1b\u6ce8\u518c>8\u5468\u3001\u505a\u79cd\u79ef\u5206>80000\u3001\u4e0b\u8f7d>120GB\u3001\u5206\u4eab\u7387>1.55\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<1.45\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b71\u4e2a\u9080\u8bf7\u540d\u989d\uff1b\u672c\u7ea7\u53ca\u4ee5\u4e0a\u5c01\u5b58\u8d26\u53f7\u540e\u4e0d\u4f1a\u88ab\u5220\u9664"
+                },
+                {
+                    "name": "Crazy User",
+                    "order": 4,
+                    "requirements": {
+                        "weeks": 12,
+                        "download_gb": 300,
+                        "bonus": 150000,
+                        "ratio": 2.05
+                    },
+                    "description": "\u522b\u540d\uff1a\u7fe1\u7fe0\u68ee\u6797\u718a\uff1b\u6ce8\u518c>12\u5468\u3001\u505a\u79cd\u79ef\u5206>150000\u3001\u4e0b\u8f7d>300GB\u3001\u5206\u4eab\u7387>2.05\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<1.95\u964d\u7ea7\u3002\u53ef\u533f\u540d\u505a\u79cd/\u4e0b\u8f7d/\u53d1\u5e03"
+                },
+                {
+                    "name": "Insane User",
+                    "order": 5,
+                    "requirements": {
+                        "weeks": 20,
+                        "download_gb": 500,
+                        "bonus": 400000,
+                        "ratio": 2.55
+                    },
+                    "description": "\u522b\u540d\uff1a\u795e\u79d8\u7d2b\u6676\u718a\uff1b\u6ce8\u518c>20\u5468\u3001\u505a\u79cd\u79ef\u5206>400000\u3001\u4e0b\u8f7d>500GB\u3001\u5206\u4eab\u7387>2.55\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<2.45\u964d\u7ea7\u3002\u53ef\u67e5\u770b\u666e\u901a\u65e5\u5fd7"
+                },
+                {
+                    "name": "Veteran User",
+                    "order": 6,
+                    "requirements": {
+                        "weeks": 28,
+                        "download_gb": 750,
+                        "bonus": 800000,
+                        "ratio": 4.05
+                    },
+                    "description": "\u522b\u540d\uff1a\u5bd2\u51b0\u767d\u91d1\u718a\uff1b\u6ce8\u518c>28\u5468\u3001\u505a\u79cd\u79ef\u5206>800000\u3001\u4e0b\u8f7d>750GB\u3001\u5206\u4eab\u7387>4.05\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<3.95\u964d\u7ea7\u3002\u53ef\u67e5\u770b\u4ed6\u4eba\u8bc4\u8bba/\u5e16\u5b50\u5386\u53f2\uff1b\u672c\u7ea7\u53ca\u4ee5\u4e0a\u6c38\u4e45\u4fdd\u7559\u8d26\u53f7"
+                },
+                {
+                    "name": "Extreme User",
+                    "order": 7,
+                    "requirements": {
+                        "weeks": 40,
+                        "download_gb": 1024,
+                        "bonus": 1200000,
+                        "ratio": 5.05
+                    },
+                    "description": "\u522b\u540d\uff1a\u7687\u5bb6\u91d1\u8f89\u718a\uff1b\u6ce8\u518c>40\u5468\u3001\u505a\u79cd\u79ef\u5206>1200000\u3001\u4e0b\u8f7d>1024GB\u3001\u5206\u4eab\u7387>5.05\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<4.95\u964d\u7ea7\u3002\u53ef\u66f4\u65b0\u8fc7\u671f\u5916\u90e8\u4fe1\u606f\u3001\u67e5\u770bExtreme User\u8bba\u575b"
+                },
+                {
+                    "name": "Ultimate User",
+                    "order": 8,
+                    "requirements": {
+                        "weeks": 52,
+                        "download_gb": 1536,
+                        "bonus": 2000000,
+                        "ratio": 6.05
+                    },
+                    "description": "\u522b\u540d\uff1a\u6c38\u6052\u94c2\u91d1\u718a\uff1b\u6ce8\u518c>52\u5468\u3001\u505a\u79cd\u79ef\u5206>2000000\u3001\u4e0b\u8f7d>1536GB\u3001\u5206\u4eab\u7387>6.05\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<5.95\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Nexus Master",
+                    "order": 9,
+                    "requirements": {
+                        "weeks": 70,
+                        "download_gb": 3072,
+                        "bonus": 3000000,
+                        "ratio": 7.05
+                    },
+                    "description": "\u522b\u540d\uff1a\u94bb\u77f3\u4e4b\u51a0\u5317\u6781\u718a\uff1b\u6ce8\u518c>70\u5468\u3001\u505a\u79cd\u79ef\u5206>3000000\u3001\u4e0b\u8f7d>3072GB\u3001\u5206\u4eab\u7387>7.05\u53ef\u5347\u7ea7\uff1b\u5206\u4eab\u7387<6.95\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                }
+            ],
+            "special_levels": [
+                {
+                    "name": "VIP",
+                    "description": "\u4e0eNexus Master\u540c\u6743\u9650\u5e76\u88ab\u89c6\u4e3a\u7cbe\u82f1\u6210\u5458\uff1b\u514d\u81ea\u52a8\u964d\u7ea7"
+                },
+                {
+                    "name": "Other",
+                    "description": "\u81ea\u5b9a\u4e49\u7b49\u7ea7"
+                },
+                {
+                    "name": "Retiree",
+                    "description": "\u9000\u4f11\u540e\u7684\u7ba1\u7406\u7ec4\u6210\u5458"
+                },
+                {
+                    "name": "Uploader",
+                    "description": "\u4e13\u6ce8\u53d1\u5e03\u8005\uff1b\u514d\u81ea\u52a8\u964d\u7ea7\uff1b\u53ef\u67e5\u770b\u533f\u540d\u7528\u6237\u771f\u5b9e\u8eab\u4efd"
+                },
+                {
+                    "name": "Moderator",
+                    "description": "\u53ef\u7ba1\u7406\u7ba1\u7406\u7ec4\u4fe1\u7bb1\u3001\u4e3e\u62a5\u4fe1\u7bb1\u3001\u8da3\u5473\u76d2\u3001\u6295\u7968\u3001\u5019\u9009\u3001\u8bba\u575b\u5e16\u5b50\u3001\u8bc4\u8bba\u3001\u673a\u5bc6\u65e5\u5fd7\u3001\u5b57\u5e55\u3001\u65e5\u5fd7\u4ee3\u7801/\u53f2\u518c\u3001\u9080\u8bf7\u8bb0\u5f55\u548c\u7528\u6237\u4e00\u822c\u4fe1\u606f\uff1b\u4e0d\u80fd\u7ba1\u7406\u53cb\u60c5\u94fe\u63a5\u3001\u6700\u8fd1\u6d88\u606f\u3001\u8bba\u575b\u7248\u5757\uff0c\u4e0d\u80fd\u7f6e\u9876/\u4fc3\u9500\u79cd\u5b50\uff0c\u4e0d\u80fd\u67e5\u770b\u7528\u6237IP/Email\uff0c\u4e0d\u80fd\u5220\u9664\u8d26\u53f7"
+                },
+                {
+                    "name": "Administrator",
+                    "description": "\u9664\u4e0d\u80fd\u6539\u53d8\u7ad9\u70b9\u8bbe\u5b9a\u548c\u7ba1\u7406\u6350\u8d60\u5916\uff0c\u53ef\u505a\u4efb\u4f55\u4e8b"
+                },
+                {
+                    "name": "Sysop",
+                    "description": "\u7f51\u7ad9\u5f00\u53d1/\u7ef4\u62a4\u4eba\u5458\uff0c\u53ef\u6539\u53d8\u7ad9\u70b9\u8bbe\u5b9a\uff0c\u4e0d\u80fd\u7ba1\u7406\u6350\u8d60"
+                },
+                {
+                    "name": "Staff Leader",
+                    "description": "\u7f51\u7ad9\u4e3b\u7ba1\uff08\u5f53\u524d\u4e0d\u5b58\u5728\uff09"
+                }
+            ]
+        }
+    }
+}
