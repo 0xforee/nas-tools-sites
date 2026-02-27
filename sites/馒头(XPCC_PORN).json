@@ -250,5 +250,123 @@
         "PEER_COUNT": [
             "//div[@id='peercount']/b[1]"
         ]
+    },
+    "user_ranking_info": {
+        "enabled": true,
+        "keep_account_level": "Extreme User",
+        "rule_url": "https://wiki.m-team.cc/zh-tw/account-rules",
+        "field_mapping": {
+            "user_level": "user_level",
+            "upload": "upload",
+            "download": "download",
+            "ratio": "ratio",
+            "bonus": "bonus",
+            "join_at": "join_at"
+        },
+        "ranking_system": {
+            "levels": [
+                {
+                    "name": "Peasant",
+                    "order": 0,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "5\u5929\u8b66\u544a\u671f\u89c4\u5219\uff1a\u4e0b\u8f7d>10GB\u4e14\u5206\u4eab\u7387<0.6\uff1b\u4e0b\u8f7d>50GB\u4e14\u5206\u4eab\u7387<0.7\uff1b\u4e0b\u8f7d>100GB\u4e14\u5206\u4eab\u7387<0.8\uff1b\u4e0b\u8f7d>200GB\u4e14\u5206\u4eab\u7387<0.9\uff1b\u4e0b\u8f7d>500GB\u4e14\u5206\u4eab\u7387<1.0\u3002\u672a\u6539\u5584\u5c06\u7981\u7528\u5e76\u5220\u9664\u8d26\u53f7"
+                },
+                {
+                    "name": "User",
+                    "order": 1,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u53ef\u53d1\u5019\u9009\u3001\u53d1\u5e03\u8da3\u5473\u76d2\u3001\u5151\u6362\u9b54\u529b"
+                },
+                {
+                    "name": "Power User",
+                    "order": 2,
+                    "requirements": {
+                        "weeks": 4,
+                        "download_gb": 200,
+                        "ratio": 2.0
+                    },
+                    "description": "\u6ce8\u518c>4\u5468\u3001\u4e0b\u8f7d>200GB\u3001\u5206\u4eab\u7387>2.0\uff1b\u5206\u4eab\u7387<1.9\u964d\u7ea7"
+                },
+                {
+                    "name": "Elite User",
+                    "order": 3,
+                    "requirements": {
+                        "weeks": 8,
+                        "download_gb": 400,
+                        "ratio": 3.0
+                    },
+                    "description": "\u6ce8\u518c>8\u5468\u3001\u4e0b\u8f7d>400GB\u3001\u5206\u4eab\u7387>3.0\uff1b\u5206\u4eab\u7387<2.9\u964d\u7ea7\uff1b\u53ef\u53d1\u9001\u9080\u8bf7"
+                },
+                {
+                    "name": "Crazy User",
+                    "order": 4,
+                    "requirements": {
+                        "weeks": 12,
+                        "download_gb": 500,
+                        "ratio": 4.0
+                    },
+                    "description": "\u6ce8\u518c>12\u5468\u3001\u4e0b\u8f7d>500GB\u3001\u5206\u4eab\u7387>4.0\uff1b\u5206\u4eab\u7387<3.9\u964d\u7ea7"
+                },
+                {
+                    "name": "Insane User",
+                    "order": 5,
+                    "requirements": {
+                        "weeks": 16,
+                        "download_gb": 800,
+                        "ratio": 5.0
+                    },
+                    "description": "\u6ce8\u518c>16\u5468\u3001\u4e0b\u8f7d>800GB\u3001\u5206\u4eab\u7387>5.0\uff1b\u5206\u4eab\u7387<4.9\u964d\u7ea7"
+                },
+                {
+                    "name": "Veteran User",
+                    "order": 6,
+                    "requirements": {
+                        "weeks": 20,
+                        "download_gb": 1000,
+                        "ratio": 6.0
+                    },
+                    "description": "\u6ce8\u518c>20\u5468\u3001\u4e0b\u8f7d>1000GB\u3001\u5206\u4eab\u7387>6.0\uff1b\u5206\u4eab\u7387<5.9\u964d\u7ea7\uff1b\u5c01\u5b58\u65f6\u6c38\u4e45\u4fdd\u53f7"
+                },
+                {
+                    "name": "Extreme User",
+                    "order": 7,
+                    "requirements": {
+                        "weeks": 24,
+                        "download_gb": 2000,
+                        "ratio": 7.0
+                    },
+                    "description": "\u6ce8\u518c>24\u5468\u3001\u4e0b\u8f7d>2000GB\u3001\u5206\u4eab\u7387>7.0\uff1b\u5206\u4eab\u7387<6.9\u964d\u7ea7\uff1b\u6c38\u4e45\u4fdd\u53f7"
+                },
+                {
+                    "name": "Ultimate User",
+                    "order": 8,
+                    "requirements": {
+                        "weeks": 28,
+                        "download_gb": 2500,
+                        "ratio": 8.0
+                    },
+                    "description": "\u6ce8\u518c>28\u5468\u3001\u4e0b\u8f7d>2500GB\u3001\u5206\u4eab\u7387>8.0\uff1b\u5206\u4eab\u7387<7.9\u964d\u7ea7"
+                },
+                {
+                    "name": "Nexus Master",
+                    "order": 9,
+                    "requirements": {
+                        "weeks": 32,
+                        "download_gb": 3000,
+                        "ratio": 9.0
+                    },
+                    "description": "\u6ce8\u518c>32\u5468\u3001\u4e0b\u8f7d>3000GB\u3001\u5206\u4eab\u7387>9.0\uff1b\u5206\u4eab\u7387<8.9\u964d\u7ea7\uff1b\u5927\u81e3/Nexus Master\u540c\u7ea7\u542b\u4e49"
+                }
+            ],
+            "special_levels": []
+        }
     }
 }

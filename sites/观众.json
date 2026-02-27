@@ -200,5 +200,203 @@
         "PEER_COUNT": [
             "//div[@id='peercount']/b[1]"
         ]
+    },
+    "user_ranking_info": {
+        "enabled": true,
+        "keep_account_level": "Extreme User",
+        "rule_url": "https://audiences.me/faq.php#id22",
+        "field_mapping": {
+            "user_level": "user_level",
+            "upload": "upload",
+            "download": "download",
+            "ratio": "ratio",
+            "bonus": "bonus",
+            "join_at": "join_at"
+        },
+        "ranking_system": {
+            "levels": [
+                {
+                    "name": "Peasant",
+                    "order": 0,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u88ab\u964d\u7ea7\u7528\u6237\uff0c7\u5929\u5185\u9700\u63d0\u5347\u5206\u4eab\u7387\uff0c\u5426\u5219\u8d26\u53f7\u7981\u7528\uff1b\u4e0d\u80fd\u53d1\u8868\u8da3\u5473\u76d2\u3001\u7533\u8bf7\u53cb\u60c5\u94fe\u63a5\u3001\u4e0a\u4f20\u5b57\u5e55\uff1b\u4e0b\u8f7d\u6570\u53d7\u9650\u4e14tracker\u663e\u793aslot limit\uff1b\u6ce8\u518c\u672a\u6ee130\u5929\u4e14\u5206\u4eab\u7387\u4f4e\u4e8e0.2\u4f1a\u7acb\u5373\u7981\u7528\u3002\u81ea\u52a8\u964d\u7ea7\u89e6\u53d1\uff1a\u4e0b\u8f7d>80GB\u4e14\u5206\u4eab\u7387<0.8\uff1b\u4e0b\u8f7d>200GB\u4e14\u5206\u4eab\u7387<0.85\uff1b\u4e0b\u8f7d>400GB\u4e14\u5206\u4eab\u7387<0.9\uff1b\u4e0b\u8f7d>800GB\u4e14\u5206\u4eab\u7387<0.95\uff1b\u4e0b\u8f7d>1024GB\u4e14\u5206\u4eab\u7387<1.0"
+                },
+                {
+                    "name": "User",
+                    "order": 1,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u65b0\u7528\u6237\u9ed8\u8ba4\u7b49\u7ea7\uff1b\u53ef\u8bf7\u6c42\u7eed\u79cd"
+                },
+                {
+                    "name": "Power User",
+                    "order": 2,
+                    "requirements": {
+                        "weeks": 5,
+                        "download_gb": 120,
+                        "bonus": 100000,
+                        "ratio": 2.0
+                    },
+                    "description": "\u6ce8\u518c5\u5468\uff0c\u4e0b\u8f7d120GB\uff0c\u5206\u4eab\u7387>2.0\uff0c\u505a\u79cd\u79ef\u5206100000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e1.9\u81ea\u52a8\u964d\u7ea7\u3002\u53ef\u770bNFO\u3001\u67e5\u770b\u7528\u6237\u5217\u8868\u3001\u67e5\u770b\u4ed6\u4eba\u79cd\u5b50\u5386\u53f2\uff08\u9690\u79c1\u975e\u5f3a\uff09\u3001\u5220\u9664\u81ea\u5df1\u4e0a\u4f20\u5b57\u5e55\uff1b\u5019\u9009\u901a\u8fc710\u79cd\u540e\u53ef\u76f4\u63a5\u53d1\u5e03"
+                },
+                {
+                    "name": "Elite User",
+                    "order": 3,
+                    "requirements": {
+                        "weeks": 15,
+                        "download_gb": 240,
+                        "bonus": 200000,
+                        "ratio": 2.5
+                    },
+                    "description": "\u6ce8\u518c15\u5468\uff0c\u4e0b\u8f7d240GB\uff0c\u5206\u4eab\u7387>2.5\uff0c\u505a\u79cd\u79ef\u5206200000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e2.4\u81ea\u52a8\u964d\u7ea7\u3002\u540c Power User"
+                },
+                {
+                    "name": "Crazy User",
+                    "order": 4,
+                    "requirements": {
+                        "weeks": 24,
+                        "download_gb": 400,
+                        "bonus": 400000,
+                        "ratio": 3.0
+                    },
+                    "description": "\u6ce8\u518c24\u5468\uff0c\u4e0b\u8f7d400GB\uff0c\u5206\u4eab\u7387>3.0\uff0c\u505a\u79cd\u79ef\u5206400000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e2.9\u81ea\u52a8\u964d\u7ea7\u3002\u53ef\u67e5\u770b\u6392\u884c\u699c"
+                },
+                {
+                    "name": "Insane User",
+                    "order": 5,
+                    "requirements": {
+                        "weeks": 40,
+                        "download_gb": 600,
+                        "bonus": 640000,
+                        "ratio": 3.5
+                    },
+                    "description": "\u6ce8\u518c40\u5468\uff0c\u4e0b\u8f7d600GB\uff0c\u5206\u4eab\u7387>3.5\uff0c\u505a\u79cd\u79ef\u5206640000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e3.4\u81ea\u52a8\u964d\u7ea7\u3002\u540c Crazy User"
+                },
+                {
+                    "name": "Veteran User",
+                    "order": 6,
+                    "requirements": {
+                        "weeks": 60,
+                        "download_gb": 1024,
+                        "bonus": 880000,
+                        "ratio": 4.0
+                    },
+                    "description": "\u6ce8\u518c60\u5468\uff0c\u4e0b\u8f7d1024GB\uff0c\u5206\u4eab\u7387>4.0\uff0c\u505a\u79cd\u79ef\u5206880000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e3.9\u81ea\u52a8\u964d\u7ea7\u3002\u53ef\u67e5\u770b\u4ed6\u4eba\u8bc4\u8bba\u4e0e\u5e16\u5b50\u5386\u53f2"
+                },
+                {
+                    "name": "Extreme User",
+                    "order": 7,
+                    "requirements": {
+                        "weeks": 80,
+                        "download_gb": 2048,
+                        "bonus": 1200000,
+                        "ratio": 4.5
+                    },
+                    "description": "\u6ce8\u518c80\u5468\uff0c\u4e0b\u8f7d2048GB\uff0c\u5206\u4eab\u7387>4.5\uff0c\u505a\u79cd\u79ef\u52061200000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e4.4\u81ea\u52a8\u964d\u7ea7\u3002\u53ef\u66f4\u65b0\u8fc7\u671f\u5916\u90e8\u4fe1\u606f\uff1b\u672c\u7ea7\u53ca\u4ee5\u4e0a\u6c38\u4e45\u4fdd\u7559\u8d26\u53f7"
+                },
+                {
+                    "name": "Ultimate User",
+                    "order": 8,
+                    "requirements": {
+                        "weeks": 100,
+                        "download_gb": 4096,
+                        "bonus": 1500000,
+                        "ratio": 5.0
+                    },
+                    "description": "\u6ce8\u518c100\u5468\uff0c\u4e0b\u8f7d4096GB\uff0c\u5206\u4eab\u7387>5.0\uff0c\u505a\u79cd\u79ef\u52061500000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e4.4\u81ea\u52a8\u964d\u7ea7\u3002\u540c Extreme User"
+                },
+                {
+                    "name": "Nexus Master",
+                    "order": 9,
+                    "requirements": {
+                        "weeks": 112,
+                        "download_gb": 8192,
+                        "bonus": 1800000,
+                        "ratio": 6.0
+                    },
+                    "description": "\u6ce8\u518c112\u5468\uff0c\u4e0b\u8f7d8192GB\uff0c\u5206\u4eab\u7387>6.0\uff0c\u505a\u79cd\u79ef\u52061800000\uff1b\u5206\u4eab\u7387\u4f4e\u4e8e5.9\u81ea\u52a8\u964d\u7ea7\u3002\u540c Ultimate User"
+                },
+                {
+                    "name": "Rainbow",
+                    "order": 10,
+                    "requirements": {
+                        "weeks": 128,
+                        "download_gb": 10240,
+                        "bonus": 2400000,
+                        "ratio": 8.0
+                    },
+                    "description": "\u6ce8\u518c128\u5468\uff0c\u4e0b\u8f7d10240GB\uff0c\u5206\u4eab\u7387>8.0\uff0c\u505a\u79cd\u79ef\u52062400000\uff1b\u4fdd\u6301\u671f\u95f4\u663e\u793a\u5f69\u8679ID\uff0c\u505a\u79cd\u79ef\u5206\u8981\u6c42\u9010\u5e74\u589e\u52a0\uff08\u4ee5\u901a\u77e5\u4e3a\u51c6\uff09\uff0c\u672a\u8fbe\u6700\u65b0\u8981\u6c42\u81ea\u52a8\u964d\u7ea7"
+                }
+            ],
+            "special_levels": [
+                {
+                    "name": "Star",
+                    "description": "\u6350\u8d60\u7528\u6237\uff0c\u53cc\u500d\u7206\u7c73\u82b1\u83b7\u53d6"
+                },
+                {
+                    "name": "VIP",
+                    "description": "\u6350\u8d60\u7528\u6237\u3001\u7cbe\u82f1\u6210\u5458\u6216\u7279\u6b8a\u8d21\u732e\u6210\u5458\uff1b\u514d\u81ea\u52a8\u964d\u7ea7\u3001\u514dHR\uff1b\u6350\u8d60\u9ec4\u661f\u671f\u95f4\u514d\u4e0b\u8f7d\u91cf"
+                },
+                {
+                    "name": "Other",
+                    "description": "\u81ea\u5b9a\u4e49\u7b49\u7ea7"
+                },
+                {
+                    "name": "Retiree",
+                    "description": "\u5b98\u65b9\u5de5\u4f5c\u7ec4\u6210\u5458\u8fbe\u5230\u9000\u4f11\u6761\u4ef6\u540e\u53ef\u7533\u8bf7\u52a0\u5165\u9000\u4f11\u7ec4"
+                },
+                {
+                    "name": "Helper",
+                    "description": "\u5f97\u529b\u52a9\u624b\uff0c\u88ab\u8ba4\u4e3a\u6f5c\u529b\u7cbe\u82f1\u4f1a\u5458"
+                },
+                {
+                    "name": "Seeder",
+                    "description": "\u5206\u914d\u7279\u5b9a\u8d44\u6e90\u8fdb\u884c\u957f\u671f\u4fdd\u79cd\uff0c\u514d\u81ea\u52a8\u964d\u7ea7"
+                },
+                {
+                    "name": "Transferrer",
+                    "description": "\u8f6c\u8f7d\u4ed6\u7ad9\u4f5c\u54c1\u5230\u672c\u7ad9\uff1b\u8f6c\u8f7d\u4e00\u5b9a\u79cd\u5b50\u540e\u53ef\u7533\u8bf7\uff08\u5f53\u524d\u6682\u4e0d\u62db\u6536\uff09"
+                },
+                {
+                    "name": "Uploader",
+                    "description": "\u5b98\u65b9\u53d1\u5e03\u7ec4\u6210\u5458\uff1b\u514d\u81ea\u52a8\u964d\u7ea7\uff1b\u53ef\u67e5\u770b\u533f\u540d\u7528\u6237\u771f\u5b9e\u8eab\u4efd"
+                },
+                {
+                    "name": "Torrent Manager",
+                    "description": "\u53ef\u4ee5\u5bf9\u79cd\u5b50\u505a\u4efb\u4f55\u64cd\u4f5c"
+                },
+                {
+                    "name": "Forum Moderator",
+                    "description": "\u53ef\u5bf9\u8bba\u575b\u5e16\u5b50\u505a\u4efb\u4f55\u64cd\u4f5c\u5e76\u5904\u7406\u8bba\u575b\u95ee\u9898"
+                },
+                {
+                    "name": "Coder",
+                    "description": "\u4e3a\u672c\u7ad9\u63d0\u4f9b\u6e90\u7801\u7f16\u7801\u548c\u6280\u672f\u8d21\u732e"
+                },
+                {
+                    "name": "Moderator",
+                    "description": "\u53ef\u7ba1\u7406\u7ba1\u7406\u7ec4\u4fe1\u7bb1\u3001\u4e3e\u62a5\u4fe1\u7bb1\u3001\u8da3\u5473\u76d2\u3001\u6295\u7968\u3001\u5019\u9009\u3001\u8bba\u575b\u5e16\u5b50\u3001\u8bc4\u8bba\u3001\u673a\u5bc6\u65e5\u5fd7\u3001\u5b57\u5e55\u3001\u65e5\u5fd7\u4ee3\u7801/\u53f2\u518c\u3001\u9080\u8bf7\u8bb0\u5f55\u548c\u7528\u6237\u4e00\u822c\u4fe1\u606f\uff1b\u4e0d\u80fd\u7ba1\u7406\u53cb\u60c5\u94fe\u63a5\u3001\u6700\u8fd1\u6d88\u606f\u3001\u8bba\u575b\u7248\u5757\uff0c\u4e0d\u80fd\u7f6e\u9876/\u4fc3\u9500\u79cd\u5b50\uff0c\u4e0d\u80fd\u67e5\u770b\u7528\u6237IP/Email\uff0c\u4e0d\u80fd\u5220\u9664\u8d26\u53f7"
+                },
+                {
+                    "name": "Administrator",
+                    "description": "\u9664\u4e0d\u80fd\u6539\u53d8\u7ad9\u70b9\u8bbe\u5b9a\u548c\u7ba1\u7406\u6350\u8d60\u5916\uff0c\u53ef\u505a\u4efb\u4f55\u4e8b"
+                },
+                {
+                    "name": "Sysop",
+                    "description": "\u7f51\u7ad9\u5f00\u53d1/\u7ef4\u62a4\u4eba\u5458\uff0c\u53ef\u6539\u53d8\u7ad9\u70b9\u8bbe\u5b9a\uff0c\u4e0d\u80fd\u7ba1\u7406\u6350\u8d60"
+                },
+                {
+                    "name": "Staff Leader",
+                    "description": "\u7f51\u7ad9\u4e3b\u7ba1\uff0c\u53ef\u505a\u4efb\u4f55\u4e8b"
+                }
+            ]
+        }
     }
 }

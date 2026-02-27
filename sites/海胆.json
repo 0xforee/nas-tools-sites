@@ -212,5 +212,164 @@
         "2XFREE": [],
         "HR": [],
         "PEER_COUNT": []
+    },
+    "user_ranking_info": {
+        "enabled": true,
+        "keep_account_level": "Veteran User",
+        "rule_url": "https://www.haidan.video/faq.php#id22",
+        "field_mapping": {
+            "user_level": "user_level",
+            "upload": "upload",
+            "download": "download",
+            "ratio": "ratio",
+            "bonus": "bonus",
+            "join_at": "join_at"
+        },
+        "ranking_system": {
+            "levels": [
+                {
+                    "name": "Peasant",
+                    "order": 0,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u964d\u7ea7\u7528\u6237\uff0c15\u5929\u5185\u9700\u63d0\u5347\u5206\u4eab\u7387\uff0c\u5426\u5219\u4f1a\u88ab\u8e22\uff1b\u5728\u8be5\u7b49\u7ea7\u4e0d\u5141\u8bb8\u4e0b\u8f7d\uff1b\u4e0d\u80fd\u53d1\u8da3\u5473\u76d2/\u7533\u8bf7\u53cb\u60c5\u94fe\u63a5/\u4e0a\u4f20\u5b57\u5e55\uff0c\u53ef\u53d1\u5e03\u65b0\u79cd\u5b50\u83b7\u5f97\u4e0a\u4f20\u91cf\u3002\u81ea\u52a8\u964d\u7ea7\u89e6\u53d1\uff1a\u4e0b\u8f7d>50GB\u4e14\u5206\u4eab\u7387<0.5"
+                },
+                {
+                    "name": "User",
+                    "order": 1,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "\u65b0\u7528\u6237\u9ed8\u8ba4\u7b49\u7ea7\uff0c\u4ec5\u80fd\u4e0b\u8f7d\u514d\u8d39\u79cd\u5b50\uff0c\u53ef\u76f4\u63a5\u53d1\u5e03\u79cd\u5b50"
+                },
+                {
+                    "name": "Power User",
+                    "order": 2,
+                    "requirements": {
+                        "weeks": 2,
+                        "download_gb": 50,
+                        "bonus": 100,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c2\u5468\uff0c\u7b49\u7ea7\u79ef\u5206100\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u53ef\u8d2d\u4e70\u9080\u8bf7\u7801\u3001\u76f4\u63a5\u53d1\u5e03\u3001\u5220\u9664\u81ea\u5df1\u4e0a\u4f20\u5b57\u5e55"
+                },
+                {
+                    "name": "Elite User",
+                    "order": 3,
+                    "requirements": {
+                        "weeks": 4,
+                        "download_gb": 50,
+                        "bonus": 200,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c4\u5468\uff0c\u7b49\u7ea7\u79ef\u5206200\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u53ef\u53d1\u9001\u9080\u8bf7\u7801"
+                },
+                {
+                    "name": "Crazy User",
+                    "order": 4,
+                    "requirements": {
+                        "weeks": 8,
+                        "download_gb": 50,
+                        "bonus": 500,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c8\u5468\uff0c\u7b49\u7ea7\u79ef\u5206500\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u53ef\u67e5\u770b\u79cd\u5b50\u7ed3\u6784"
+                },
+                {
+                    "name": "Insane User",
+                    "order": 5,
+                    "requirements": {
+                        "weeks": 16,
+                        "download_gb": 50,
+                        "bonus": 1000,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c16\u5468\uff0c\u7b49\u7ea7\u79ef\u52061000\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u53ef\u53d1\u5e03\u8da3\u5473\u76d2"
+                },
+                {
+                    "name": "Veteran User",
+                    "order": 6,
+                    "requirements": {
+                        "weeks": 28,
+                        "download_gb": 50,
+                        "bonus": 2000,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c28\u5468\uff0c\u7b49\u7ea7\u79ef\u52062000\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u672c\u7ea7\u53ca\u4ee5\u4e0a\u6c38\u4e45\u4fdd\u7559\u8d26\u53f7"
+                },
+                {
+                    "name": "Extreme User",
+                    "order": 7,
+                    "requirements": {
+                        "weeks": 32,
+                        "download_gb": 50,
+                        "bonus": 5000,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c32\u5468\uff0c\u7b49\u7ea7\u79ef\u52065000\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u53ef\u67e5\u770b\u65e5\u5fd7"
+                },
+                {
+                    "name": "Ultimate User",
+                    "order": 8,
+                    "requirements": {
+                        "weeks": 40,
+                        "download_gb": 50,
+                        "bonus": 8000,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c40\u5468\uff0c\u7b49\u7ea7\u79ef\u52068000\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u53ef\u67e5\u770b\u6392\u884c\u699c"
+                },
+                {
+                    "name": "Nexus Master",
+                    "order": 9,
+                    "requirements": {
+                        "weeks": 52,
+                        "download_gb": 50,
+                        "bonus": 10000,
+                        "ratio": 1.0
+                    },
+                    "description": "\u6ce8\u518c52\u5468\uff0c\u7b49\u7ea7\u79ef\u520610000\uff0c\u5206\u4eab\u7387>1\uff0c\u4e0b\u8f7d>50GB\uff1b\u5206\u4eab\u7387<0.95\u964d\u81f3Peasant\u3002\u5141\u8bb8\u533f\u540d\u4e0e\u53d1\u5e03\u4e3b\u9898\u63a8\u8350"
+                }
+            ],
+            "special_levels": [
+                {
+                    "name": "Star",
+                    "description": "\u6350\u8d60\u7528\u6237"
+                },
+                {
+                    "name": "VIP",
+                    "description": "\u4e0eNexus Master\u540c\u6743\u9650\u5e76\u88ab\u89c6\u4e3a\u7cbe\u82f1\u6210\u5458\uff1b\u514d\u81ea\u52a8\u964d\u7ea7"
+                },
+                {
+                    "name": "Retiree",
+                    "description": "\u9000\u4f11\u540e\u7684\u7ba1\u7406\u7ec4\u6210\u5458"
+                },
+                {
+                    "name": "Uploader",
+                    "description": "\u4e13\u6ce8\u53d1\u5e03\u8005\uff1b\u514d\u81ea\u52a8\u964d\u7ea7\uff1b\u53ef\u67e5\u770b\u533f\u540d\u7528\u6237\u771f\u5b9e\u8eab\u4efd"
+                },
+                {
+                    "name": "Moderator",
+                    "description": "\u62e5\u6709\u5927\u90e8\u5206\u7ad9\u52a1\u7ba1\u7406\u6743\u9650\uff08\u542b\u4fe1\u7bb1\u3001\u4e3e\u62a5\u3001\u5019\u9009\u3001\u8bc4\u8bba\u3001\u65e5\u5fd7\u3001\u5b57\u5e55\u7b49\uff09"
+                },
+                {
+                    "name": "Administrator",
+                    "description": "\u9664\u7ad9\u70b9\u8bbe\u5b9a\u4e0e\u6350\u8d60\u7ba1\u7406\u5916\u53ef\u505a\u4efb\u4f55\u4e8b"
+                },
+                {
+                    "name": "Sysop",
+                    "description": "\u5f00\u53d1\u7ef4\u62a4\u4eba\u5458\uff0c\u53ef\u6539\u7ad9\u70b9\u8bbe\u5b9a\uff0c\u4e0d\u80fd\u7ba1\u7406\u6350\u8d60"
+                },
+                {
+                    "name": "Staff Leader",
+                    "description": "\u7f51\u7ad9\u4e3b\u7ba1\uff0c\u53ef\u505a\u4efb\u4f55\u4e8b"
+                }
+            ]
+        }
     }
 }

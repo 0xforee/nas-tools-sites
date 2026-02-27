@@ -241,5 +241,132 @@
         "PEER_COUNT": [
             "//div[@id='peercount']/b[1]"
         ]
+    },
+    "user_ranking_info": {
+        "enabled": true,
+        "keep_account_level": "Extreme User",
+        "rule_url": "https://www.pttime.org/forums.php?action=viewtopic&topicid=16&page=0",
+        "field_mapping": {
+            "user_level": "user_level",
+            "upload": "upload",
+            "download": "download",
+            "ratio": "ratio",
+            "bonus": "bonus",
+            "join_at": "join_at"
+        },
+        "ranking_system": {
+            "levels": [
+                {
+                    "name": "Peasant",
+                    "order": 0,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 100,
+                        "ratio": 0.4
+                    },
+                    "description": "0\u7ea7\u5a74\u513f\uff1a\u4e0b\u8f7d>100G\u4e14\u5206\u4eab\u7387<0.4\uff1b\u4e0b\u8f7d>200G\u4e14\u5206\u4eab\u7387<0.5\uff1b\u4e0b\u8f7d>400G\u4e14\u5206\u4eab\u7387<0.6\uff1b\u4e0b\u8f7d>800G\u4e14\u5206\u4eab\u7387<0.7\uff1b\u4e0b\u8f7d>1600G\u4e14\u5206\u4eab\u7387<0.8\u8fdb\u51657\u5929\u6539\u5584\u63d0\u9192\u5e76\u53ef\u80fd\u5c01\u7981\uff08\u63d0\u9192/\u5c01\u7981\u6709\u7ea61\u5929\u5ef6\u8fdf\uff09"
+                },
+                {
+                    "name": "User",
+                    "order": 1,
+                    "requirements": {
+                        "weeks": 0,
+                        "download_gb": 0,
+                        "ratio": 0.0
+                    },
+                    "description": "1\u7ea7\u5e7c\u513f\u56ed\u3002\u4e0b\u8f7d\u91cf<100G\u65f6\u4e0d\u53c2\u4e0e\u5347\u964d\u7ea7\uff0c\u4fdd\u6301User"
+                },
+                {
+                    "name": "Power User",
+                    "order": 2,
+                    "requirements": {
+                        "weeks": 4,
+                        "download_gb": 512,
+                        "ratio": 1.05
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c114\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c11512G\uff0c\u5206\u4eab\u7387>1.05\uff1b\u5206\u4eab\u7387<0.95\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Elite User",
+                    "order": 3,
+                    "requirements": {
+                        "weeks": 8,
+                        "download_gb": 2048,
+                        "ratio": 1.55
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c118\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c112048G\uff0c\u5206\u4eab\u7387>1.55\uff1b\u5206\u4eab\u7387<1.45\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Crazy User",
+                    "order": 4,
+                    "requirements": {
+                        "weeks": 15,
+                        "download_gb": 4096,
+                        "ratio": 2.05
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c1115\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c114096G\uff0c\u5206\u4eab\u7387>2.05\uff1b\u5206\u4eab\u7387<1.95\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Insane User",
+                    "order": 5,
+                    "requirements": {
+                        "weeks": 25,
+                        "download_gb": 8192,
+                        "ratio": 2.55
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c1125\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c118192G\uff0c\u5206\u4eab\u7387>2.55\uff1b\u5206\u4eab\u7387<2.45\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Veteran User",
+                    "order": 6,
+                    "requirements": {
+                        "weeks": 52,
+                        "download_gb": 16384,
+                        "ratio": 3.05
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c1152\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c1116384G\uff0c\u5206\u4eab\u7387>3.05\uff1b\u5206\u4eab\u7387<2.95\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Extreme User",
+                    "order": 7,
+                    "requirements": {
+                        "weeks": 80,
+                        "download_gb": 25000,
+                        "ratio": 3.55
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c1180\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c1125000G\uff0c\u5206\u4eab\u7387>3.55\uff1b\u5206\u4eab\u7387<3.45\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b72\u4e2a\u9080\u8bf7\u540d\u989d\uff1b\u672c\u7ea7\u53ca\u4ee5\u4e0a\u65e0200\u5929\u767b\u5f55\u8981\u6c42"
+                },
+                {
+                    "name": "Ultimate User",
+                    "order": 8,
+                    "requirements": {
+                        "weeks": 104,
+                        "download_gb": 45000,
+                        "ratio": 4.05
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c11104\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c1145000G\uff0c\u5206\u4eab\u7387>4.05\uff1b\u5206\u4eab\u7387<3.95\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b75\u4e2a\u9080\u8bf7\u540d\u989d"
+                },
+                {
+                    "name": "Nexus Master",
+                    "order": 9,
+                    "requirements": {
+                        "weeks": 130,
+                        "download_gb": 90000,
+                        "ratio": 4.55
+                    },
+                    "description": "\u6ce8\u518c\u81f3\u5c11130\u5468\uff0c\u4e0b\u8f7d\u81f3\u5c1190000G\uff0c\u5206\u4eab\u7387>4.55\uff1b\u5206\u4eab\u7387<4.45\u964d\u7ea7\u3002\u9996\u6b21\u5347\u7ea7\u83b710\u4e2a\u9080\u8bf7\u540d\u989d"
+                }
+            ],
+            "special_levels": [
+                {
+                    "name": "VIP",
+                    "description": "10\u7ea7\u4e34\u65f6\u8d35\u5bbe/\u6c38\u4e45\u8d35\u5bbe\uff0c\u53c2\u8003\u8d35\u5bbe\u7279\u6743\u8bf4\u660e"
+                },
+                {
+                    "name": "Administrator",
+                    "description": "\u7ba1\u7406\u7ec4\u7ea7\u522b\uff08\u672c\u7ad9\u4ec5\u8bbe\u7ba1\u7406\u5458\uff09"
+                }
+            ]
+        }
     }
 }
