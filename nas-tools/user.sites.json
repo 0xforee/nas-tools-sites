@@ -1,5 +1,5 @@
 {
-    "version": "202602272008",
+    "version": "202605310921",
     "indexer": [
         {
             "id": "zhuzhu",
@@ -14281,7 +14281,7 @@
         {
             "id": "haidan",
             "name": "\u6d77\u80c6\u4e4b\u5bb6",
-            "domain": "https://www.haidan.video/",
+            "domain": "https://www.haidan.cc/",
             "encoding": "UTF-8",
             "public": false,
             "parser": "HaiDanSpider",
@@ -14488,7 +14488,7 @@
             "user_ranking_info": {
                 "enabled": true,
                 "keep_account_level": "Veteran User",
-                "rule_url": "https://www.haidan.video/faq.php#id22",
+                "rule_url": "https://www.haidan.cc/faq.php#id22",
                 "field_mapping": {
                     "user_level": "user_level",
                     "upload": "upload",
@@ -23920,7 +23920,7 @@
                 "//div[@id='peercount']/b[1]"
             ]
         },
-        "www.haidan.video": {
+        "www.haidan.cc": {
             "FREE": [
                 "(//div[@class='torrent']/div/div/div/div/div[@class='torrent_name_wrap']/div/div[@class='sp'])[last()]/img[@class='pro_free']"
             ],
